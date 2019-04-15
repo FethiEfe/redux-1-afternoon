@@ -5,15 +5,15 @@ let RecipeCard = props => {
   const {
     name,
     category,
-    authorFirst,
-    authorLast,
+    authorFirstName,
+    authorLastName,
     ingredients,
-    instructions
+    instruction
   } = props;
   const ingredientsDisplay = ingredients.map((ingredient, i) => {
     return <li key={i}>{ingredient}</li>;
   });
-  const instructionsDisplay = instructions.map((instruction, i) => {
+  const instructionsDisplay = instruction.map((instruction, i) => {
     return <li key={i}>{instruction}</li>;
   });
   return (
@@ -23,7 +23,7 @@ let RecipeCard = props => {
         <p>#{category}</p>
       </div>
       <p>
-        by {authorFirst} {authorLast}
+        by {authorFirstName} {authorLastName}
       </p>
       <h3>Ingredients</h3>
       <div className="scroll_container">

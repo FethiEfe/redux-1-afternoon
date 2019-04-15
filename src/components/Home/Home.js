@@ -10,7 +10,11 @@ class Home extends Component {
     this.state = {
       recipes: store.getState().recipes
     };
+    // this.clearInput = this.clearInput.bind(this)
   }
+
+  
+  
 
   render() {
     const recipes = this.state.recipes.map((recipe, i) => {
@@ -19,17 +23,17 @@ class Home extends Component {
           key={i}
           name={recipe.name}
           category={recipe.category}
-          authorFirst={recipe.authorFirst}
-          authorLast={recipe.authorLast}
+          authorFirstName={recipe.authorFirstName}
+          authorLastName={recipe.authorLastName}
           ingredients={recipe.ingredients}
-          instructions={recipe.instructions}
+          instruction={recipe.instruction}
         />
       );
     });
     return (
       <div className="Home">
         <Link to="/add/name">
-          <button>Create New Recipe</button>
+          <button >Create New Recipe</button>
         </Link>
         <div className="card_container">{recipes}</div>
       </div>
